@@ -17,56 +17,13 @@
   </head>
   <body>
     <div id="outer">
-      <iframe id="inner" name="inner" src="https://commodoretyler.github.io/test//inner.html" width="300" height="300"></iframe>
+      <iframe id="inner" name="inner" src="inner.html" width="300" height="300"></iframe>
     </div>
     <div id="another">
       <p>hello</p>
     </div>
 
-    <script type="application/javascript">
-      var ifMo = false;
-      console.log(navigator.usb.getDevices);
-
-      window.addEventListener('blur', (event) => {
-        console.log(event);
-        event.preventDefault();
-        if (ifMo) {
-          console.log('click');
-        }
-      });
-      (function($) {
-        console.log($);
-        $('#outer').mouseover(function() {
-          console.log('outer mouseover');
-          ifMo = true;
-        })
-
-        $('#outer').mouseout(function() {
-          console.log('outer mouseout');
-          ifMo = false;
-        })
-
-        $('#another').mouseover(function() {
-          console.log('another mouseover');
-        })
-
-        $('#another').mouseout(function() {
-          console.log('another mouseout');
-        })
-      })(jQuery);
-
-      var frames = window.frames; // or // var frames = window.parent.frames;
-      for (var i = 0; i < frames.length; i++) { 
-        // do something with each subframe as frames[i]
-        frames[i].document.body.style.background = "red";
-        console.log(frames[i]);
-      }
-
-      console.log(document.getElementsByTagName('iframe')[0].contentWindow);
-      document.getElementsByTagName('iframe')[0].contentWindow.addEventListener('click', function(e) {
-        console.log('iframe click', e);
-      })
-    </script>
+    <script src="main.js"></script>
 
   </body>
 </html>
