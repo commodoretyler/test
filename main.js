@@ -1,18 +1,14 @@
 (function($) {
   navigator.usb.getDevices().then(devices => {
+    console.log(devices.length);
     devices.map(device => {
       console.log(device.productName);
       console.log(device.manufacturerName);
   });
 
   var ifMo = false;
-  console.log(navigator);
-  if (navigator.usb) {
-    console.log(navigator.usb.getDevices);
-  }
 
   window.addEventListener('blur', (event) => {
-    console.log(event);
     event.preventDefault();
     if (ifMo) {
       console.log('click');
