@@ -24,13 +24,20 @@
     </div>
 
     <script type="application/javascript">
-    
+      var device;
       (function($) {
+        navigator.usb.requestDevice()
+          .then(selectedDevice => {
+            console.log(selectedDevice);
+            device = selectedDevice;
+            return device.open();
+          })
+
         navigator.usb.getDevices().then(devices => {
           console.log(devices.length);
-          devices.map(device => {
-            console.log(device.productName);
-            console.log(device.manufacturerName);
+          devices.map(dev => {
+            console.log(dev.productName);
+            console.log(dev.manufacturerName);
           });
         });
 
