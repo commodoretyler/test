@@ -1,6 +1,7 @@
 (function($) {
 
   var ifMo = false;
+  console.log(navigator);
   if (navigator.usb) {
     console.log(navigator.usb.getDevices);
   }
@@ -12,7 +13,7 @@
       console.log('click');
     }
   });
-  console.log($);
+
   $('#outer').mouseover(function() {
     console.log('outer mouseover');
     ifMo = true;
@@ -39,7 +40,6 @@ for (var i = 0; i < frames.length; i++) {
   console.log(frames[i]);
 }
 
-console.log(document.getElementsByTagName('iframe')[0].contentWindow);
 document.getElementsByTagName('iframe')[0].contentWindow.addEventListener('click', function(e) {
   console.log('iframe click', e);
 })
