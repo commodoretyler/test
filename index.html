@@ -31,6 +31,7 @@
           devices.map(device => {
             console.log(device.productName);
             console.log(device.manufacturerName);
+          });
         });
 
         var ifMo = false;
@@ -45,20 +46,20 @@
         $('#outer').mouseover(function() {
           console.log('outer mouseover');
           ifMo = true;
-        })
+        });
 
         $('#outer').mouseout(function() {
           console.log('outer mouseout');
           ifMo = false;
-        })
+        });
 
         $('#another').mouseover(function() {
           console.log('another mouseover');
-        })
+        });
 
         $('#another').mouseout(function() {
           console.log('another mouseout');
-        })
+        });
       })(jQuery);
 
       var frames = window.frames; // or // var frames = window.parent.frames;
@@ -70,7 +71,7 @@
 
       document.getElementsByTagName('iframe')[0].contentWindow.addEventListener('click', function(e) {
         console.log('iframe click', e);
-      })
+      });
     </script>
 
   </body>
